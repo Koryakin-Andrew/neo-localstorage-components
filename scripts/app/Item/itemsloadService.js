@@ -1,7 +1,6 @@
 'use strict';
 function localService($q,$rootScope){
       let loadDeffer=$q.defer();
-      let lStore=window.localStorage;
       let saveDeffer = $q.defer();
 
       return{
