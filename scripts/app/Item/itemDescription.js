@@ -1,5 +1,5 @@
-
-angular.module("itemApp").component("itemDescription",{
+'use strict';
+angular.module('itemApp').component('itemDescription',{
    templateUrl:'scripts/app/Item/views/itemDescription.tpl.html',
    bindings:{
       description:'<'

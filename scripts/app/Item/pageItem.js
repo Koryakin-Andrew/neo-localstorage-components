@@ -1,14 +1,14 @@
+'use strict';
 function MainComponent(itemsLoadService){
       this.allItems=[];
 
       this.$onInit=function(){
-            var main=this;
+            let vm=this;
 
             itemsLoadService.loadPromise.then(function(data){
-                  main.allItems=data;
+                  vm.allItems=data;
             },function(error){ });
 
-            // инициализация загрузки новых данных
             itemsLoadService.loadedSuccess();
       }
 
@@ -22,25 +22,26 @@ function MainComponent(itemsLoadService){
       }
 
       this.onAddNewItem=function(item){
-            var vm=this;
-             // настройка сервиса обновления значений
-             itemsLoadService.savePromise().then(function(data){
-                  if(data!=null){
-                        vm.allItems[vm.allItems.length]=data;
-                        alert("Новая запись добавлена");
+            let vm=this;
+
+            itemsLoadService.savePromise().then(
+            function(data){
+                  
+                  if(!data){
+                        alert('Ошибка сохранения в локальное хранилище');
                   }
-                  else{
-                        alert("Ошибка сохранения в локальное хранилище");
-                  }
+
+                  vm.allItems[vm.allItems.length]=data;
+                  alert('Новая запись добавлена');
             },function(error){
-                  alert("Ошибка сохранения на клиенте");
+                  alert('Ошибка сохранения на клиенте');
             });
-            // инициализация сохранение новых данных
+
             itemsLoadService.saveSuccess(item);
       }
 }
 
-angular.module("itemApp").component("mainComponent",{
+angular.module('itemApp').component('mainComponent',{
 
       templateUrl:'scripts/app/Item/views/pageItem.tpl.html',
       controller: MainComponent

@@ -1,1 +1,1 @@
-angular.module("itemApp",[]);
+angular.module('itemApp',[]);
