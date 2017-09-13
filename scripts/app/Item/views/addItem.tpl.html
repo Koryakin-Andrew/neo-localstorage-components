@@ -1,0 +1,7 @@
+<form name="$ctrl.addItemForm" data-ng-submit="$ctrl.onSubmit()" novalidate>
+      <label>Имя</label>
+      <input type="text" data-ng-model="$ctrl.name" name="itemName"  data-ng-required="true" />
+      <label>Описание</label>
+      <textarea data-ng-model="$ctrl.description" name="valueItem"  data-ng-required="true"></textarea>
+      <button type="submit"> + добавить</button>
+</form>
