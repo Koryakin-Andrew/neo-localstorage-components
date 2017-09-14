@@ -1,7 +1,10 @@
 'use strict';
 function AddItem(){
-      this.name='';
-      this.description='';
+
+    this.$onInit = function () {
+            this.name = '';
+            this.description = '';
+      };
 
       this.onSubmit=function(){
             let vm=this.addItemForm;

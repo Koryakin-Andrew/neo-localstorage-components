@@ -1,6 +1,6 @@
 'use strict';
 function MainComponent(itemsLoadService){
-      this.allItems=[];
+      this.allItems=new Array(0);
 
       this.$onInit=function(){
             let vm=this;
