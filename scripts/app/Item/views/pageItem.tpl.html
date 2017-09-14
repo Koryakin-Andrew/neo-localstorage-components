@@ -3,11 +3,7 @@
 		<add-item add-item="$ctrl.onAddNewItem(item)"></add-item><item-description description="$ctrl.selectedItem.description"></item-description>
 	</div>
 	<section class="itemsBlock">
-			<div class="item" data-ng-class="{itemClicked:$ctrl.isItemSelected(item)}"
-					data-ng-repeat="item in $ctrl.allItems track by $index" 
-					data-ng-click="$ctrl.onSelect(item)" >
-				{{item.name}}
-	   </div>
+			<list-items all-items="$ctrl.allItems" on-select="$ctrl.onSelectItem(item)"></list-items>
 	</section>
 	<footer>
 			футтер всегда прикреплен к низу страницы и имеет фиксированную высоту 50px

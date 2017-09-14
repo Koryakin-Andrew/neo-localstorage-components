@@ -12,14 +12,9 @@ function MainComponent(itemsLoadService){
             itemsLoadService.loadedSuccess();
       }
 
-      this.onSelect=function(item){
+      this.onSelectItem=function(item){
             this.selectedItem=item;
       };
-
-      this.isItemSelected=function(item){
-            return (this.selectedItem != null 
-                  && this.selectedItem==item);
-      }
 
       this.onAddNewItem=function(item){
             let vm=this;
