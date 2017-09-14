@@ -3,8 +3,6 @@ function AddItem(){
       this.name='';
       this.description='';
 
-      this.$onInit=function(){};
-
       this.onSubmit=function(){
             let vm=this.addItemForm;
             if(vm.$valid){
